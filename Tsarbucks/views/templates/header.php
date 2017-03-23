@@ -1,5 +1,6 @@
 <?php 
 session_start();
+define('URL_NAME_IP','http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Tsarbucks/');
 ?>
 <html>
 
@@ -7,12 +8,12 @@ session_start();
 		<title>Tsarbucks</title>
     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo URL_NAME_IP;?>assets/css/style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>    
-    <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>views/js/CookiesHandler.js"></script>
+    <script src="<?php echo URL_NAME_IP;?>views/js/CookiesHandler.js"></script>
 	</head>
 
 	<body>
@@ -20,7 +21,7 @@ session_start();
     <nav class="navbar navbar-inverse navbar-custom">
         <div class="container-fluid">
           <div class="navbar-header">
-            <h1><a class="navbar-brand"  href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>index.php">Tsarbucks</a></h1>
+            <h1><a class="navbar-brand"  href="<?php echo URL_NAME_IP;?>index.php">Tsarbucks</a></h1>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -30,7 +31,7 @@ session_start();
           </br>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li> <a id="home_button" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>index.php"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+              <li> <a id="home_button" href="<?php echo URL_NAME_IP;?>index.php"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
               <li class="dropdown">
                 <a id="more" class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -44,7 +45,7 @@ if (isset($_COOKIE[$cookie_name])) {
 if ($role != 'barista') {
 ?>
                     <li>
-                      <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>menu.php">
+                      <a href="<?php echo URL_NAME_IP;?>menu.php">
                         <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Menu
                       </a>
                     </li>
@@ -53,7 +54,7 @@ if ($role != 'barista') {
 if ($role == 'customer') {
 ?>
                     <li>
-                      <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>orders.php">
+                      <a href="<?php echo URL_NAME_IP;?>orders.php">
                         <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> My Orders
                       </a>
                     </li>
@@ -61,7 +62,7 @@ if ($role == 'customer') {
 } else if ($role == 'barista') {
 ?>
                     <li>
-                      <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>orders.php">
+                      <a href="<?php echo URL_NAME_IP;?>orders.php">
                         <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Customer Orders
                       </a>
                     </li>
@@ -79,7 +80,7 @@ if (!isset($_COOKIE[$cookie_name]))
 {
 ?>
                 <li>
-                  <a id="login_page" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>login.php">
+                  <a id="login_page" href="<?php echo URL_NAME_IP;?>login.php">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login
                   </a>
                 </li>
@@ -100,7 +101,7 @@ if (!isset($_COOKIE[$cookie_name]))
         if ($_SESSION['role'] == 'customer') {
 ?>
                 <li>
-                    <a id ="shopping_cart" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>shopping_cart.php">
+                    <a id ="shopping_cart" href="<?php echo URL_NAME_IP;?>shopping_cart.php">
                       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart
                       <span id="number_of_items_in_cart"></span>
                     </a>
@@ -120,7 +121,7 @@ if (!isset($_COOKIE[$cookie_name]))
         </div>
       </nav>
 
-      <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/'?>views/js/headerHandler.js"> </script>
+      <script src="<?php echo URL_NAME_IP;?>views/js/headerHandler.js"> </script>
 
 
       <div id="place_holder_page" class="container">
