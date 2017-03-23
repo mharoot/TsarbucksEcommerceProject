@@ -143,7 +143,7 @@ class Orders{
 
                         $.ajax({
                         type: "POST",
-                        url: window.location.origin+':'+window.location.port+"/Tsarbucks/controllers/barista_fill_order.php", 
+                        url: window.location.origin+"/Tsarbucks/controllers/barista_fill_order.php", 
                         dataType:"text",
                         data:post_data,
                         success:function(response){

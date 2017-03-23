@@ -1,4 +1,5 @@
 <?php
+
 include_once('views/templates/header.php');
 $cookie_name = 'username';
 if(!isset($_COOKIE[$cookie_name])) 
@@ -50,17 +51,17 @@ if(!isset($_COOKIE[$cookie_name]))
             
             $.ajax({
             type: "POST",
-            url: "<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/controllers/login_router.php'?>", 
+            url: "<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Tsarbucks/controllers/login_router.php'?>", 
             dataType: 'text',
             cache: false,
             data:post,
             success:function(response){
                 if (response === 'customer') {
                     //form.parent().html(response);
-                    window.location = '<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/index.php'?>';
+                    window.location = '<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Tsarbucks/index.php'?>';
                 } else if (response === 'barista') {
                     //form.parent().html(response);
-                    window.location = '<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/index.php'?>';
+                    window.location = '<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Tsarbucks/index.php'?>';
                 } else {
                     form_errors.innerHTML = response;
                     return 1;

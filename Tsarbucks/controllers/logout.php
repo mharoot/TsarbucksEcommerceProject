@@ -23,7 +23,7 @@ setcookie('username', '', time()-1000);
 setcookie('username', '', time()-1000, '/');
 
 
-echo 'http://'.$_SERVER['SERVER_NAME'].'/Tsarbucks/index.php';
+echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Tsarbucks/index.php';
 
 //$_SERVER['SERVER_NAME'].'/Tsarbucks/';
 
