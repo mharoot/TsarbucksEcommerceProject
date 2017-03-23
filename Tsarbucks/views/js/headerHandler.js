@@ -14,7 +14,7 @@ $('.logout').on('click', function() {
     var post_data = 'logout=true'; 
     $.ajax({
     type: "POST",
-    url: window.location.origin+"/Tsarbucks/controllers/logout.php", 
+    url: window.location.origin+':'+window.location.port+"/Tsarbucks/controllers/logout.php", 
     dataType:"text",
     data:post_data,
     success:function(response) {
@@ -24,7 +24,7 @@ $('.logout').on('click', function() {
     window.location = response;
     },
     error:function (xhr, ajaxOptions, thrownError){
-        alert("ERROR: "+window.location.origin);
+        alert("ERROR: "+window.location.origin+':'+window.location.port);
         
     }
     });
